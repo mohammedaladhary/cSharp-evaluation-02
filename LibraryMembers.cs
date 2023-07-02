@@ -25,7 +25,8 @@ namespace evaluation_02
         }
         public void MemberDetails()
         {
-            Console.WriteLine(Name + " Member Details:");
+            Console.WriteLine("Library Members Detail:");
+            Console.WriteLine("Name :"+ Name);
             Console.WriteLine("ID: " + MemberId);
             Console.WriteLine("Address: " + Address);
             Console.WriteLine("PhoneNo: " + PhoneNo);
@@ -37,7 +38,7 @@ namespace evaluation_02
             {
                 BorrowedBooks.Add(book);
                 book.borrowBook(); // Call the BorrowBook() method from the Book class
-                Console.WriteLine("Book borrowed successfully.");
+                Console.WriteLine(book.Title+ " book borrowed by "+ Name);
             }
             else
             {
@@ -51,7 +52,7 @@ namespace evaluation_02
             {
                 BorrowedBooks.Remove(book);
                 book.returnBook(); // Call the ReturnBook() method from the Book class
-                Console.WriteLine("Book returned successfully.");
+                Console.WriteLine(book.Title+" book returned by "+ Name);
             }
             else
             {

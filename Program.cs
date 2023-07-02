@@ -12,52 +12,60 @@ namespace evaluation_02
             Book book = new Book("11111", "The Great Wall", "Mohammed AL Adhary", 5);
 
             book.BookDetails();
+            Console.WriteLine("--------------------------------------------");
             book.borrowBook();
+            Console.WriteLine("Available Copies: " + book.AvailableCopies);
+            Console.WriteLine();
+            book.returnBook();
             Console.WriteLine("Available Copies: " + book.AvailableCopies);
             Console.WriteLine("--------------------------------------------");
 
-            // LibraryMember object initiated
+            //// LibraryMember object initiated
             LibraryMembers member = new LibraryMembers("M6499", "khalifa", "souq seeb street", 9236253);
 
             member.MemberDetails();
             Console.WriteLine("--------------------------------------------");
 
-            //borrow book
+            //borrow/return book and call the member details
             member.BorrowBook(book);
             Console.WriteLine("Available Copies: " + book.AvailableCopies);
-
-            Console.WriteLine("---------------------------------------------");
-            //return book and call the member details
+            Console.WriteLine();
             member.ReturnBook(book);
             Console.WriteLine("Available Copies: " + book.AvailableCopies);
+            Console.WriteLine("--------------------------------------------");
 
-            Library library = new Library();
+            Library bookShop = new Library();
 
             Book book2 = new Book("9876543210", "how to sleep well", "Harper Lee", 3);
-            // Add the books to the library
-            library.AddBook(book);
-            library.AddBook(book2);
+            // Add the books to the bookShop library
+            bookShop.DisplayAllBooks();
+            //book.BookDetails();
+            //Console.WriteLine();
+            //bookShop.AddBook(book);
+            //Console.WriteLine("-------------");
+            //book2.BookDetails();
+            //Console.WriteLine();
+            //bookShop.AddBook(book2);
 
             // Create some LibraryMember objects
             LibraryMembers member1 = new LibraryMembers("C321", "Ahmed", "Barka Street", 8273526);
-            library.AddLibraryMember(member1);
+            bookShop.AddLibraryMember(member1);
 
-            // Display all books/members in the library
-            library.DisplayAllBooks();
-            library.DisplayAllLibraryMembers();
+            // Display all members in the bookShop
+            bookShop.DisplayAllLibraryMembers();
 
             // Member1 borrows book2
-            //library.BorrowBook(member1, book2);
+            //bookShop.BorrowBook(member1, book2);
 
             // Member1 returns book2
-            //library.ReturnBook(member1, book2);
-            Console.WriteLine("---------------------------------------------");
+            ////bookShop.ReturnBook(member1, book2);
+            //Console.WriteLine("---------------------------------------------");
 
-            //by using interface ILendable
-            Book specialBook = new Book("S213","End of the Chapter","Ammar",3);
-            specialBook.BookDetails();
-            specialBook.borrowBook();
-            specialBook.returnBook();
+            ////by using interface ILendable
+            //Book specialBook = new Book("S213","End of the Chapter","Ammar",3);
+            //specialBook.BookDetails();
+            //specialBook.borrowBook();
+            //specialBook.returnBook();
         }
     }
 }

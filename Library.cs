@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,7 @@ namespace evaluation_02
         public void AddBook(Book book)
         {
             books.Add(book);
+            Console.WriteLine("book added to the library");
         }
 
         public void AddLibraryMember(LibraryMembers member)
@@ -30,13 +32,19 @@ namespace evaluation_02
         public void DisplayAllBooks()
         {
             Console.WriteLine("All Books in the Library:");
-            foreach (Book book in books)
+            if (books.Count == 0)
             {
-                book.BookDetails();
-                Console.WriteLine();
+                Console.WriteLine("No books in the library.");
+            }
+            else
+            {
+                Console.WriteLine("Books available in the library:");
+                foreach (var book in books)
+                {
+                    Console.WriteLine("Title :" + book.Title, "Author :" + book.Author , "Available Copies :" +book.AvailableCopies);
+                }
             }
         }
-
         public void DisplayAllLibraryMembers()
         {
             Console.WriteLine("All Library Members:");
