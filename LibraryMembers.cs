@@ -25,7 +25,6 @@ namespace evaluation_02
         }
         public void MemberDetails()
         {
-            Console.WriteLine("Library Members Detail:");
             Console.WriteLine("Name :"+ Name);
             Console.WriteLine("ID: " + MemberId);
             Console.WriteLine("Address: " + Address);

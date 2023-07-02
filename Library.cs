@@ -31,7 +31,6 @@ namespace evaluation_02
 
         public void DisplayAllBooks()
         {
-            Console.WriteLine("All Books in the Library:");
             if (books.Count == 0)
             {
                 Console.WriteLine("No books in the library.");
@@ -47,7 +46,8 @@ namespace evaluation_02
         }
         public void DisplayAllLibraryMembers()
         {
-            Console.WriteLine("All Library Members:");
+            Console.WriteLine("Library Members Detail:");
+            Console.WriteLine();
             foreach (LibraryMembers member in members)
             {
                 member.MemberDetails();

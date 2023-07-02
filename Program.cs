@@ -1,4 +1,5 @@
-﻿using System.Net.NetworkInformation;
+﻿using evaluation_02;
+using System.Net.NetworkInformation;
 
 namespace evaluation_02
 {
@@ -37,8 +38,9 @@ namespace evaluation_02
             Library bookShop = new Library();
 
             Book book2 = new Book("9876543210", "how to sleep well", "Harper Lee", 3);
+            bookShop.AddBook(book);
+            bookShop.AddBook(book2);
             // Add the books to the bookShop library
-            bookShop.DisplayAllBooks();
             //book.BookDetails();
             //Console.WriteLine();
             //bookShop.AddBook(book);
@@ -49,10 +51,13 @@ namespace evaluation_02
 
             // Create some LibraryMember objects
             LibraryMembers member1 = new LibraryMembers("C321", "Ahmed", "Barka Street", 8273526);
+            LibraryMembers member2 = new LibraryMembers("H821", "Omran", "Ibri Street", 1243727);
             bookShop.AddLibraryMember(member1);
-
-            // Display all members in the bookShop
+            bookShop.AddLibraryMember(member2);
+            Console.WriteLine("------------------");
+            // Display all members/books in the bookShop
             bookShop.DisplayAllLibraryMembers();
+            bookShop.DisplayAllBooks();
 
             // Member1 borrows book2
             //bookShop.BorrowBook(member1, book2);
